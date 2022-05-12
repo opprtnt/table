@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useSelector } from "react-redux";
+import "./App.css";
+import Loader from "./components/Loader";
+import Table from "./components/Table";
+import TableTwo from "./components/TableTwo";
+import styled from "styled-components";
+import TableThree from "./components/TableThree";
 
 function App() {
+  const isLoading = useSelector((state) => state.store.isLoading);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Main>
+      {isLoading && <Loader />}
+      <Table />
+      <TableTwo />
+      <TableThree />
+    </Main>
   );
 }
 
 export default App;
+
+const Main = styled.div`
+  display: flex;
+  justify-content: center;
+`;
