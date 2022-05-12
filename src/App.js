@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import "./App.css";
 import Loader from "./components/Loader";
 import Table from "./components/Table";
 import TableTwo from "./components/TableTwo";
