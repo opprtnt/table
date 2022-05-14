@@ -1,12 +1,13 @@
-import { useDispatch, useSelector } from "react-redux";
 import { getTableFetch } from "../redux/tableSlice";
 import styled from "styled-components";
 import Button from "./Button";
 import TableComponent from "./TableComponents";
+import React, { FC } from "react";
+import { useAppSelector, useAppDispatch } from "../redux";
 
-const Table = () => {
-  const dataTable = useSelector((state) => state.store.data);
-  const dispatch = useDispatch();
+const Table: FC = () => {
+  const dataTable = useAppSelector((state) => state.store.data);
+  const dispatch = useAppDispatch();
 
   const getData = () => {
     dispatch(getTableFetch());

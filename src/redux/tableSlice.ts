@@ -1,12 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { ITableOne, ITableThree, ITableTwo } from "../interface";
 
 const tableSlice = createSlice({
   name: "store",
   initialState: {
-    data: [],
+    data: [] as ITableOne[],
     isLoading: false,
-    dataTwo: [],
-    dataThree: [],
+    dataTwo: [] as ITableTwo[],
+    dataThree: [] as ITableThree[],
   },
   reducers: {
     getTableFetch: (state) => {

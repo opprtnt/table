@@ -1,6 +1,6 @@
 import styled from "styled-components";
-
-const Loader = () => {
+import React, {FC} from "react";
+const Loader:FC = () => {
   return (
     <LoaderComponent>
       <div className="lds-dual-ring" />

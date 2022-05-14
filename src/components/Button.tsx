@@ -1,6 +1,8 @@
 import styled from "styled-components";
+import React, { FC } from "react";
+import { IButton } from "../interface";
 
-const Button = ({ f }) => {
+const Button: FC<IButton> = ({ f }) => {
   return <ButtonComponent onClick={f}>Получить данные</ButtonComponent>;
 };
 

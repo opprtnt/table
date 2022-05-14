@@ -1,23 +1,24 @@
-import { useDispatch, useSelector } from "react-redux";
-import { getTableFetchTwo } from "../redux/tableSlice";
+import { getTableFetchThree } from "../redux/tableSlice";
 import styled from "styled-components";
 import Button from "./Button";
 import TableComponent from "./TableComponents";
+import React, { FC } from "react";
+import { useAppSelector, useAppDispatch } from "../redux";
 
-const TableTwo = () => {
-  const dataTable = useSelector((state) => state.store.dataTwo);
-  const dispatch = useDispatch();
+const TableThree: FC = () => {
+  const dataTable = useAppSelector((state) => state.store.dataThree);
+  const dispatch = useAppDispatch();
 
   const getData = () => {
-    dispatch(getTableFetchTwo());
+    dispatch(getTableFetchThree());
   };
 
   return (
-    <TableBlue>
+    <TableGreen>
       <thead>
         <tr>
           <th>Имя</th>
-          <th>Email</th>
+          <th>Сообщение</th>
         </tr>
       </thead>
       <tbody>
@@ -25,7 +26,7 @@ const TableTwo = () => {
           return (
             <tr key={v.id}>
               <td>{v.name}</td>
-              <td>{v.email}</td>
+              <td>{v.body}</td>
             </tr>
           );
         })}
@@ -37,19 +38,19 @@ const TableTwo = () => {
           </td>
         </tr>
       </tfoot>
-    </TableBlue>
+    </TableGreen>
   );
 };
 
-const TableBlue = styled(TableComponent)`
+const TableGreen = styled(TableComponent)`
   thead {
-    background-color: #35dcf4;
+    background-color: #09f2b1;
   }
   tbody {
     tr {
-      background-color: rgba(53, 220, 244, 0.1);
+      background-color: rgba(9, 242, 177, 0.1);
     }
   }
 `;
 
-export default TableTwo;
+export default TableThree;
