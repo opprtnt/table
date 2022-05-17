@@ -1,17 +1,15 @@
-import Loader from "./components/Loader";
-import Table from "./components/Table";
-import TableTwo from "./components/TableTwo";
-import styled from "styled-components";
-import TableThree from "./components/TableThree";
+import Loader from "./components/Loader/Loader";
 import React, { FC } from "react";
-import { useAppSelector } from "./redux";
+import Main from "./StyledApp";
+import TableTwo from "./components/TableTwo/TableTwo";
+import TableThree from "./components/TableThree/TableThree";
+import TableOne from "./components/TableOne/TableOne";
 
 const App: FC = () => {
-  const isLoading = useAppSelector((state) => state.store.isLoading);
   return (
     <Main>
-      {isLoading && <Loader />}
-      <Table />
+      <Loader />
+      <TableOne />
       <TableTwo />
       <TableThree />
     </Main>
@@ -19,8 +17,3 @@ const App: FC = () => {
 };
 
 export default App;
-
-const Main = styled.div`
-  display: flex;
-  justify-content: center;
-`;

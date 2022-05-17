@@ -1,10 +1,4 @@
 import styled from "styled-components";
-import React, { FC } from "react";
-import { IButton } from "../interface";
-
-const Button: FC<IButton> = ({ f }) => {
-  return <ButtonComponent onClick={f}>Получить данные</ButtonComponent>;
-};
 
 const ButtonComponent = styled.button`
   border-radius: 4px;
@@ -19,4 +13,4 @@ const ButtonComponent = styled.button`
   }
 `;
 
-export default Button;
+export default ButtonComponent;

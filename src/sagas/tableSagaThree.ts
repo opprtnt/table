@@ -1,13 +1,12 @@
 import { call, put, takeEvery } from "redux-saga/effects";
-import axios, { AxiosResponse } from "axios";
+import { AxiosResponse } from "axios";
 import { getTableSuccessThree } from "../redux/tableSlice";
 import { ITableThree } from "../interface";
+import getDataTable from "../axios/getDataTable";
 
 function* workGetTableFetch() {
   const dataTable: AxiosResponse<ITableThree> = yield call(() =>
-    axios
-      .get("https://jsonplaceholder.typicode.com/comments?_limit=20")
-      .then((response) => response.data)
+    getDataTable("https://jsonplaceholder.typicode.com/comments?_limit=20")
   );
   // const data = yield dataTable.data;
   yield put(getTableSuccessThree(dataTable));

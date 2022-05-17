@@ -1,12 +1,4 @@
 import styled from "styled-components";
-import React, {FC} from "react";
-const Loader:FC = () => {
-  return (
-    <LoaderComponent>
-      <div className="lds-dual-ring" />
-    </LoaderComponent>
-  );
-};
 
 const LoaderComponent = styled.div`
   width: 100%;
@@ -44,4 +36,4 @@ const LoaderComponent = styled.div`
   }
 `;
 
-export default Loader;
+export default LoaderComponent;
